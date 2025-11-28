@@ -2,7 +2,10 @@
   "name": "pwdemo",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test",
+    "start": "http-server ./ -c-1 -p 8080"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -10,5 +13,8 @@
   "devDependencies": {
     "@playwright/test": "^1.56.1",
     "@types/node": "^24.10.0"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
   }
 }
