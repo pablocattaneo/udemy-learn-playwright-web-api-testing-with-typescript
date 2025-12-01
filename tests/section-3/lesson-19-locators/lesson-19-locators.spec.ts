@@ -102,3 +102,37 @@ describe("Lesson 19: Locators: Locate form controls by their associated label te
     await expect(expressLabel).toBeVisible();
   });
 });
+
+describe("Lesson 19: Locators: Locate input elements by their placeholder text", () => {
+  test("Enter your full name placeholder is visible", async ({ page }) => {
+    await page.goto(
+      "http://localhost:8080/section-3/lesson-19-locators/app.html"
+    );
+
+    const fullNamePlaceholder = page.getByPlaceholder("Enter your full name");
+    await expect(fullNamePlaceholder).toBeVisible();
+  });
+  test(" Phone number (xxx-xxx-xxxx) placeholder is visible", async ({ page }) => {
+    await page.goto(
+      "http://localhost:8080/section-3/lesson-19-locators/app.html"
+    );
+
+    const phonePlaceholder = page.getByPlaceholder("Phone number (xxx-xxx-xxxx)");
+    await expect(phonePlaceholder).toBeVisible();
+  });
+  test("Type your message here... placeholder is visible", async ({ page }) => {
+    await page.goto(
+      "http://localhost:8080/section-3/lesson-19-locators/app.html"
+    );
+
+    const messagePlaceholder = page.getByPlaceholder("Type your message here...");
+    await expect(messagePlaceholder).toBeVisible();
+  });
+  test("Search products... placeholder is visible", async ({ page }) => {
+    await page.goto(
+      "http://localhost:8080/section-3/lesson-19-locators/app.html"
+    );
+    const searchPlaceholder = page.getByPlaceholder("Search products...");
+    await expect(searchPlaceholder).toBeVisible();
+  });
+});
