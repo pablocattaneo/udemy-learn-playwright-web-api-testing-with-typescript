@@ -87,4 +87,18 @@ describe("Lesson 19: Locators: Locate form controls by their associated label te
     const ageLabel = page.getByLabel("Your Age:");
     await expect(ageLabel).toBeVisible();
   });
+  test("Standard: label is visible", async ({ page }) => {
+    await page.goto(
+      "http://localhost:8080/section-3/lesson-19-locators/app.html"
+    );
+    const standardLabel = page.getByLabel("Standard");
+    await expect(standardLabel).toBeVisible();
+  });
+  test(" Express: label is visible", async ({ page }) => {
+    await page.goto(
+      "http://localhost:8080/section-3/lesson-19-locators/app.html"
+    );
+    const expressLabel = page.getByLabel("Express");
+    await expect(expressLabel).toBeVisible();
+  });
 });
