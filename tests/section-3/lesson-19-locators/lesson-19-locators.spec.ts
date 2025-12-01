@@ -112,12 +112,16 @@ describe("Lesson 19: Locators: Locate input elements by their placeholder text",
     const fullNamePlaceholder = page.getByPlaceholder("Enter your full name");
     await expect(fullNamePlaceholder).toBeVisible();
   });
-  test(" Phone number (xxx-xxx-xxxx) placeholder is visible", async ({ page }) => {
+  test(" Phone number (xxx-xxx-xxxx) placeholder is visible", async ({
+    page,
+  }) => {
     await page.goto(
       "http://localhost:8080/section-3/lesson-19-locators/app.html"
     );
 
-    const phonePlaceholder = page.getByPlaceholder("Phone number (xxx-xxx-xxxx)");
+    const phonePlaceholder = page.getByPlaceholder(
+      "Phone number (xxx-xxx-xxxx)"
+    );
     await expect(phonePlaceholder).toBeVisible();
   });
   test("Type your message here... placeholder is visible", async ({ page }) => {
@@ -125,7 +129,9 @@ describe("Lesson 19: Locators: Locate input elements by their placeholder text",
       "http://localhost:8080/section-3/lesson-19-locators/app.html"
     );
 
-    const messagePlaceholder = page.getByPlaceholder("Type your message here...");
+    const messagePlaceholder = page.getByPlaceholder(
+      "Type your message here..."
+    );
     await expect(messagePlaceholder).toBeVisible();
   });
   test("Search products... placeholder is visible", async ({ page }) => {
@@ -134,5 +140,16 @@ describe("Lesson 19: Locators: Locate input elements by their placeholder text",
     );
     const searchPlaceholder = page.getByPlaceholder("Search products...");
     await expect(searchPlaceholder).toBeVisible();
+  });
+});
+
+describe("Lesson 19: Locators: Locate elements (usually images) by their alt text.", () => {
+  test("Logo image with alt text logo image is visible", async ({ page }) => {
+    await page.goto(
+      "http://localhost:8080/section-3/lesson-19-locators/app.html"
+    );
+
+    const logoImage = page.getByAltText("logo image");
+    await expect(logoImage).toBeVisible();
   });
 });
