@@ -153,3 +153,28 @@ describe("Lesson 19: Locators: Locate elements (usually images) by their alt tex
     await expect(logoImage).toBeVisible();
   });
 });
+
+describe("Lesson 19: Locators: Locate elements by their title attribute.", () => {
+  test("Element with title Home page link is visible", async ({ page }) => {
+    await page.goto(
+      "http://localhost:8080/section-3/lesson-19-locators/app.html"
+    );
+
+    const  htmlTitleElement = page.getByTitle("Home page link");
+    await expect(htmlTitleElement).toBeVisible();
+  });
+  test(" Element with title HyperText Markup Language is visible", async ({ page }) => {
+    await page.goto(
+      "http://localhost:8080/section-3/lesson-19-locators/app.html"
+    );
+    const htmlTitleElement = page.getByTitle("HyperText Markup Language");
+    await expect(htmlTitleElement).toBeVisible();
+  });
+  test(" Element with title Tooltip text is visible", async ({ page }) => {
+    await page.goto(
+      "http://localhost:8080/section-3/lesson-19-locators/app.html"
+    );
+    const tooltipTitleElement = page.getByTitle("Tooltip text");
+    await expect(tooltipTitleElement).toBeVisible();
+  });
+});
