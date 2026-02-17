@@ -173,4 +173,25 @@ describe("Lesson 19: Locators: Locate elements by their data-test-id attribute."
     const productGrid = page.getByTestId("product-grid");
     await expect(productGrid).toBeVisible();
   });
+  test("Element with data-test-id product-card-1 is visible", async ({
+    page,
+  }) => {
+    await page.goto(BASE_URL);
+    const productCard1 = page.getByTestId("product-card-1");
+    await expect(productCard1).toBeVisible();
+  });
+  test("Element with data-test-id product-card-2 is visible", async ({
+    page,
+  }) => {
+    await page.goto(BASE_URL);
+    const productCard2 = page.getByTestId("product-card-2");
+    await expect(productCard2).toBeVisible();
+  });
+  test("Element with data-test-id product-card-3 is visible", async ({
+    page,
+  }) => {
+    await page.goto(BASE_URL);
+    const productCard3 = page.getByTestId("product-card-3");
+    await expect(productCard3).toBeVisible();
+  });
 });
