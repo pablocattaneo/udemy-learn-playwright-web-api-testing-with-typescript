@@ -15,7 +15,7 @@ test("Single select dropdown actions select by value", async ({ page }) => {
     await dropdown.selectOption({ value: "uk" });
 });
 
-test("Counting the number of options in dropdown", async ({ page }) => {
+test("Select should have 10 options", async ({ page }) => {
     await page.goto(PAGE_URL);
     const dropdown = page.getByRole("combobox").and(page.locator("#country"));
     const options = await dropdown.locator("option").all();
