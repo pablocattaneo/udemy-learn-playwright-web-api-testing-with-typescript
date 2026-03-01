@@ -8,7 +8,7 @@ test("Order By Lowest to Highest should sort items in descending order by price"
 }) => {
   await page.goto(PAGE_URL);
   const dropdown = page.getByRole("combobox");
-  await dropdown.selectOption({ value: "lowestprice" }, { timeout: 100000 });
+  await dropdown.selectOption({ value: "lowestprice" });
   await page.waitForResponse(response => 
   response.url().includes(API_URL) && (response.status() === 200 || response.status() === 304)
 );
