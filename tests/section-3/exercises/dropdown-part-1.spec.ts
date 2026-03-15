@@ -3,6 +3,13 @@ import { test, expect } from "@playwright/test";
 const PAGE_URL = "https://www.bstackdemo.com/";
 const API_URL = "https://www.bstackdemo.com/api/products";
 
+test("Verify the dropdown is displayed and enabled", async ({ page }) => {
+  await page.goto(PAGE_URL);
+  const dropdown = page.getByRole("combobox");
+  await expect(dropdown).toBeVisible();
+  await expect(dropdown).toBeEnabled();
+});
+
 test("Order By Lowest to Highest should sort items in descending order by price", async ({
   page,
 }) => {
