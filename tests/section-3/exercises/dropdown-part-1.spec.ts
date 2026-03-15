@@ -9,10 +9,12 @@ test("Order By Lowest to Highest should sort items in descending order by price"
   await page.goto(PAGE_URL);
   const dropdown = page.getByRole("combobox");
   await dropdown.selectOption({ value: "lowestprice" });
-  await page.waitForResponse(response => {
-  return response.url().includes(API_URL) && (response.status() === 200 || response.status() === 304)
-  }
-);
+  await page.waitForResponse((response) => {
+    return (
+      response.url().includes(API_URL) &&
+      (response.status() === 200 || response.status() === 304)
+    );
+  });
   const prices = await page
     .locator(".shelf-container .shelf-item .shelf-item__price .val b")
     .allTextContents();
